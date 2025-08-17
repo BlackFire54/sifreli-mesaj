@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Özel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="password-area" id="passwordArea">
+            <p class="prompt-text">Şifreyi giriniz</p>
+            <input type="password" id="passwordInput" placeholder="Şifrenizi buraya girin">
+            <button id="submitButton">Giriş Yap</button>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+
+        <div class="success-area hidden" id="successArea">
+            <p class="success-prompt-text" id="clickToSeeMessage">Tebrikler! Mesajı görmek için tıkla</p>
+            <button class="bas-hadi-button" id="basHadiButton">Bas Hadi</button>
+            
+            <p class="final-message hidden" id="finalMessage">Seni Seviyorum Dicle 💕</p>
+
+            <audio id="backgroundMusic" loop>
+                <source src="şarkı.mp3" type="audio/mpeg">
+                Tarayıcınız ses dosyasını desteklemiyor.
+            </audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

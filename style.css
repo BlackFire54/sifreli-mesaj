@@ -1,0 +1,135 @@
+/* style.css */
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d; /* Koyu siyah arka plan */
+    color: #e0e0e0; /* Açık gri metin rengi */
+    overflow: hidden;
+}
+
+/* Neon efekti için arka plan animasyonu (isteğe bağlı) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff); /* Mavi ve mor tonlarında bir gradyan */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    opacity: 0.1; /* Çok hafif bir efekt */
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Genel Alan Stili */
+.password-area, .success-area {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(255, 0, 255, 0.2);
+    text-align: center;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #00ffff, #ff00ff) 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.prompt-text, .success-prompt-text, .final-message {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #00ffff; /* Neon mavi metin */
+    /* Text-shadow bulanıklığını daha da azalttık */
+    text-shadow: 0 0 3px #00ffff, 0 0 6px #00ffff; /* Daha keskin parlama */
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.final-message {
+    font-size: 3.5em;
+    color: #ff00ff; /* Neon mor */
+    /* Text-shadow bulanıklığını daha da azalttık */
+    text-shadow: 0 0 3px #ff00ff, 0 0 6px #ff00ff, 0 0 9px #ff00ff; /* Daha az yoğun parlama */
+}
+
+
+#passwordInput {
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1.2em;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+#passwordInput::placeholder {
+    color: rgba(224, 224, 224, 0.7);
+}
+
+#passwordInput:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+}
+
+#submitButton, .bas-hadi-button {
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: #ffffff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+#submitButton:hover, .bas-hadi-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 3px #ff4d4d; /* Hata mesajı için de azalttık */
+}
