@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgroundMusic = document.getElementById('backgroundMusic');
 
     // Şifre: 92736
-    const correctPassword = "92736";
+    const correctPassword = "4736";
 
     // Şifre Giriş Butonu Tıklaması
     submitButton.addEventListener('click', () => {
